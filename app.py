@@ -99,4 +99,6 @@ if __name__ == '__main__':
                 db.session.add(producto)
             db.session.commit()
     
-    app.run(debug=True)
+    # CAMBIA ESTA LÍNEA:
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False)
