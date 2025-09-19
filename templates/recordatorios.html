@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Gestión de Recordatorios</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4>Agregar nuevo recordatorio</h4>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre de la persona</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha" class="form-label">Fecha de cumpleaños</label>
+                        <input type="date" class="form-control" id="fecha" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="anticipacion" class="form-label">¿Cuántos días de anticipación quieres ser notificado?</label>
+                        <select class="form-select" id="anticipacion">
+                            <option value="1">1 día antes</option>
+                            <option value="2" selected>2 días antes</option>
+                            <option value="3">3 días antes</option>
+                            <option value="7">1 semana antes</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar recordatorio</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h4>Tus recordatorios</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-info">
+                    Necesitas una membresía activa para gestionar recordatorios.
+                    <a href="{{ url_for('membresias') }}" class="alert-link">Obtener membresía</a>
+                </div>
+                
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        María González
+                        <span class="badge bg-primary rounded-pill">15 de Julio (notificación: 12 de Julio)</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Juan Pérez
+                        <span class="badge bg-primary rounded-pill">3 de Agosto (notificación: 31 de Julio)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

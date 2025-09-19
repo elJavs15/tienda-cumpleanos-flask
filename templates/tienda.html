@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Tienda de Regalos</h1>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar regalos...">
+            <button class="btn btn-primary">Buscar</button>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <select class="form-select">
+            <option selected>Filtrar por tienda</option>
+            <option value="amazon">Amazon</option>
+            <option value="mercadolibre">Mercado Libre</option>
+            <option value="liverpool">Liverpool</option>
+            <option value="palacio">Palacio de Hierro</option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="/static/images/amazon-giftcard.jpg" class="card-img-top" alt="Tarjeta Amazon">
+            <div class="card-body">
+                <h5 class="card-title">Tarjeta de Regalo Amazon</h5>
+                <p class="card-text">Tarjeta de regalo electrónica para Amazon</p>
+                <p class="fw-bold">$500.00 MXN</p>
+                <p class="text-muted">Disponible en: Amazon</p>
+            </div>
+            <div class="card-footer">
+                <a href="https://www.amazon.com.mx" target="_blank" class="btn btn-outline-primary btn-sm">Ver en Amazon</a>
+                <button class="btn btn-primary btn-sm">Enviar como regalo</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="/static/images/vino-set.jpg" class="card-img-top" alt="Juego de Vino">
+            <div class="card-body">
+                <h5 class="card-title">Juego de Vino</h5>
+                <p class="card-text">Elegante juego de vino tinto y blanco</p>
+                <p class="fw-bold">$850.00 MXN</p>
+                <p class="text-muted">Disponible en: Liverpool</p>
+            </div>
+            <div class="card-footer">
+                <a href="https://www.liverpool.com.mx" target="_blank" class="btn btn-outline-primary btn-sm">Ver en Liverpool</a>
+                <button class="btn btn-primary btn-sm">Enviar como regalo</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="/static/images/globo.jpg" class="card-img-top" alt="Globo Personalizado">
+            <div class="card-body">
+                <h5 class="card-title">Globo Personalizado</h5>
+                <p class="card-text">Globo con mensaje personalizado para cumpleaños</p>
+                <p class="fw-bold">$250.00 MXN</p>
+                <p class="text-muted">Disponible en: Mercado Libre</p>
+            </div>
+            <div class="card-footer">
+                <a href="https://www.mercadolibre.com.mx" target="_blank" class="btn btn-outline-primary btn-sm">Ver en Mercado Libre</a>
+                <button class="btn btn-primary btn-sm">Enviar como regalo</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 p-4 bg-light rounded">
+    <h3>¿Necesitas enviar un regalo rápido?</h3>
+    <p>Selecciona el servicio de entrega:</p>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="servicioEntrega" id="uber" checked>
+        <label class="form-check-label" for="uber">
+            Uber Express - Entrega en menos de 2 horas
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="servicioEntrega" id="didi">
+        <label class="form-check-label" for="didi">
+            Didi Delivery - Entrega el mismo día
+        </label>
+    </div>
+</div>
+{% endblock %}
